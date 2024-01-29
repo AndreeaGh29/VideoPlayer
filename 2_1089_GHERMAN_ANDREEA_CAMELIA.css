@@ -1,0 +1,251 @@
+*{
+    margin: 0; padding: 0;
+    box-sizing:border-box;
+    text-transform: capitalize;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal;
+}
+
+body{
+    background: #eee;
+
+}
+
+.head{
+    color: blueviolet;
+    font-size: 40px;
+    text-align: center;
+    padding: 10px;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 15px;
+    align-items: flex-start;
+    padding: 5px 5%;
+}   
+
+
+
+.container .main-video{
+    position: relative;
+    background: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    
+}
+
+.main-video .video{
+    z-index: 1;
+}
+
+.main-video canvas{
+    border-radius: 5px;
+    z-index: 2;
+}
+
+
+.container .main-video video, .container canvas{
+    width: 100%;
+    border-radius: 5px;
+
+} 
+
+
+.container .video-list{
+    background: #fff;
+    border-radius: 5px;
+    height: 300px;
+    overflow-y: scroll;
+    grid-row: 1;
+    grid-column: 2;
+}
+
+.container .video-list::-webkit-scrollbar{
+    width: 7px;
+}
+
+.container .video-list::-webkit-scrollbar-track{
+    background: #ccc;
+    border-radius: 50px;
+}
+
+.container .video-list::-webkit-scrollbar-thumb{
+    background: #666;
+    border-radius: 50px;
+}
+
+
+.container .video-list .vid video{
+    width: 100px;
+    border-radius: 5px;
+   
+}
+
+.container .video-list .vid{
+    display: flex;
+    align-items: center;
+    gap:15px;
+    background: #f7f7f7;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid rgba(0,0,0,.1);
+    cursor: pointer;
+}
+
+.container .video-list .vid:hover{
+    background: lightblue;
+}
+
+.container .video-list .vid.active{
+    background: blue;
+}
+
+.container .video-list .vid.active .title{
+    color:#fff;
+}
+
+.container .video-list .vid .title{
+    color: #333;
+    font-size: 17px;
+}
+
+@media (max-width:991px){
+    .container{
+        grid-template-columns: 2fr 1fr;
+        padding: 10px;
+    }
+}
+
+@media (max-width:768px) {
+    .container{
+        grid-template-columns:1fr;
+    
+    }
+    
+}
+
+.container .video .title{
+    padding-top: 20px;
+}
+
+.container .controls {
+    position: absolute; 
+    bottom: 10px; 
+    left: 10px; 
+    width: calc(100% - 20px); 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.5); 
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.container .controls button, .video-list .vid button, .container .filters-container button {
+    padding: 5px 10px;
+    background-color: blueviolet;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px;
+}
+
+.container .controls button:hover, .video-list .vid button:hover, .container .filters-container button:hover {
+    background-color: darkmagenta;
+}
+
+.container .controls progress {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    margin-bottom:10px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.file-upload-button{
+    background-color: blueviolet;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.file-upload-button:hover{
+    background-color: darkmagenta;
+}
+
+#previewTooltip {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    display: none;
+    pointer-events: none; 
+}
+
+
+.container .controls progress::-webkit-progress-bar {
+    background-color: #eee;
+}
+
+.container .controls progress::-webkit-progress-value {
+    background-color: blueviolet;
+}
+
+.container .controls input[type="range"] {
+    width: 30%;
+    margin-top: 10px;
+}
+
+@media (max-width:768px) {
+    .container .controls {
+        align-items: stretch;
+    }
+
+    .container .controls button, 
+    .container .controls progress,
+    .container .controls input[type="range"] {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+
+.filter-buttons {
+    margin-top: 20px;
+}
+
+
+#canvas {
+    display: block;
+    position: inherit;
+    top: 0;
+    left: 0;
+    opacity: 100%; 
+    pointer-events: none; 
+}
+
+ 
+.filters-container {
+    position: relative;
+    background: #fff;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}

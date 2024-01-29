@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Video</title>
+    <link rel="stylesheet" href="2_1089_GHERMAN_ANDREEA_CAMELIA.css">
+    <style>
+        canvas{
+            display:contents;
+
+        }
+    </style>
+
+</head>
+<body>
+    
+<h3 class="head">Video Player</h3>
+
+<div class="container">
+
+
+    <div class="main-video">
+
+
+        <div class="video" >
+            <h3 class="title">Video1.Mp4</h3>  
+            <video src="media\Video1.mp4" autoplay></video>
+            
+            <div class="controls">
+                <progress id="progressBar"value="0" max="100"></progress>
+                <button id="prevButton">Back</button>
+                <button id="playPauseButton">Play</button>
+                <button id="nextBtnCanvas">Next</button>
+                <input type="range" id="volumeControl" min=0 max="1" step="any" value="1">
+            </div>
+                      
+       
+        </div>     
+
+    </div> 
+
+
+    <div class="filters-container">
+        <div class="filter-buttons">
+        <button data-effect="normal">Normal</button>
+        <button data-effect="greyscale">Greyscale</button>
+        <button data-effect="sepia">Sepia</button>
+        <button data-effect="invert">Invert</button>
+    </div>
+
+
+
+    <canvas id="canvas" width="640" height="360"></canvas></canvas>
+    
+    </div>
+
+    <div class="video-list">
+        <div class="vid active">
+            <video src="media\Video1.mp4" muted></video>
+            <h3 class="title">Video1.Mp4</h3>
+            <button class="delete">Delete</button>
+            <button class="moveUp">MoveUp</button>
+            <button class="moveDown">MoveDown</button>
+
+        </div>
+        <div class="vid">
+            <video src="media\Video2.mp4"  muted ></video>
+            <h3 class="title">Video2.Mp4</h3>
+            <button class="delete">Delete</button>
+            <button class="moveUp">MoveUp</button>
+            <button class="moveDown">MoveDown</button>
+
+        </div>
+        <div class="vid">
+            <video src="media\Video3.mp4"  muted ></video>
+            <h3 class="title">Video3.Mp4</h3>
+            <button class="delete">Delete</button>
+            <button class="moveUp">MoveUp</button>
+            <button class="moveDown">MoveDown</button>
+
+        </div>
+
+        <div class="vid">
+            <video src="media\Video4.mp4"  muted ></video>
+            <h3 class="title">Video4.Mp4</h3>
+            <button class="delete">Delete</button>
+            <button class="moveUp">MoveUp</button>
+            <button class="moveDown">MoveDown</button>
+
+        </div>
+
+    </div>
+
+    <input type="file" id="fileInput" accept="video/*" style="display: none;">
+    <label for="fileInput" class="file-upload-button">Încărcați Fișier</label>
+    
+    
+</div>
+
+<div id="previewTooltip" class="tooltip"></div>
+
+
+
+<script src="2_1089_GHERMAN_ANDREEA_CAMELIA.js">
+   
+
+</script>
+</body>
+</html>
+
